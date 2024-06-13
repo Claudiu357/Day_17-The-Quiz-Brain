@@ -3,7 +3,6 @@ from data import question_data
 from quiz_brain import QuizBrain
 
 question_bank = []
-game_running = True
 for question in question_data:
     q_text = question["text"]
     q_answer = question["answer"]
@@ -11,5 +10,5 @@ for question in question_data:
     question_bank.append(question_now)
 
 quiz = QuizBrain(question_bank)
-while game_running:
+while quiz.still_have_questions():
     quiz.next_question()
